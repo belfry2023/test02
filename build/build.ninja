@@ -54,7 +54,7 @@ build CMakeFiles/test02.dir/Core/Src/main.c.obj: C_COMPILER__test02_unscanned_De
   DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
   DEP_FILE = CMakeFiles\test02.dir\Core\Src\main.c.obj.d
   FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11
-  INCLUDES = -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
   OBJECT_DIR = CMakeFiles\test02.dir
   OBJECT_FILE_DIR = CMakeFiles\test02.dir\Core\Src
 
@@ -63,7 +63,7 @@ build CMakeFiles/test02.dir/Core/Src/gpio.c.obj: C_COMPILER__test02_unscanned_De
   DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
   DEP_FILE = CMakeFiles\test02.dir\Core\Src\gpio.c.obj.d
   FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11
-  INCLUDES = -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
   OBJECT_DIR = CMakeFiles\test02.dir
   OBJECT_FILE_DIR = CMakeFiles\test02.dir\Core\Src
 
@@ -72,7 +72,7 @@ build CMakeFiles/test02.dir/Core/Src/stm32f1xx_it.c.obj: C_COMPILER__test02_unsc
   DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
   DEP_FILE = CMakeFiles\test02.dir\Core\Src\stm32f1xx_it.c.obj.d
   FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11
-  INCLUDES = -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
   OBJECT_DIR = CMakeFiles\test02.dir
   OBJECT_FILE_DIR = CMakeFiles\test02.dir\Core\Src
 
@@ -81,7 +81,7 @@ build CMakeFiles/test02.dir/Core/Src/stm32f1xx_hal_msp.c.obj: C_COMPILER__test02
   DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
   DEP_FILE = CMakeFiles\test02.dir\Core\Src\stm32f1xx_hal_msp.c.obj.d
   FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11
-  INCLUDES = -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
   OBJECT_DIR = CMakeFiles\test02.dir
   OBJECT_FILE_DIR = CMakeFiles\test02.dir\Core\Src
 
@@ -90,7 +90,7 @@ build CMakeFiles/test02.dir/Core/Src/sysmem.c.obj: C_COMPILER__test02_unscanned_
   DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
   DEP_FILE = CMakeFiles\test02.dir\Core\Src\sysmem.c.obj.d
   FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11
-  INCLUDES = -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
   OBJECT_DIR = CMakeFiles\test02.dir
   OBJECT_FILE_DIR = CMakeFiles\test02.dir\Core\Src
 
@@ -99,7 +99,7 @@ build CMakeFiles/test02.dir/Core/Src/syscalls.c.obj: C_COMPILER__test02_unscanne
   DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
   DEP_FILE = CMakeFiles\test02.dir\Core\Src\syscalls.c.obj.d
   FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11
-  INCLUDES = -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
   OBJECT_DIR = CMakeFiles\test02.dir
   OBJECT_FILE_DIR = CMakeFiles\test02.dir\Core\Src
 
@@ -108,9 +108,18 @@ build CMakeFiles/test02.dir/startup_stm32f103xb.s.obj: ASM_COMPILER__test02_unsc
   DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
   DEP_FILE = CMakeFiles\test02.dir\startup_stm32f103xb.s.obj.d
   FLAGS = -mcpu=cortex-m3  -x assembler-with-cpp -MMD -MP -g
-  INCLUDES = -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
   OBJECT_DIR = CMakeFiles\test02.dir
   OBJECT_FILE_DIR = CMakeFiles\test02.dir
+
+build CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj: C_COMPILER__test02_unscanned_Debug D$:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.c || cmake_object_order_depends_target_test02
+  CONFIG = Debug
+  DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
+  DEP_FILE = CMakeFiles\test02.dir\Kernel\Module\Algorithm\Controller\controller.c.obj.d
+  FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11
+  INCLUDES = -ID:/stm32prj/test02/Kernel/Module/Algorithm/Controller/controller.h -ID:/stm32prj/test02/Core/Inc -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -ID:/stm32prj/test02/Drivers/STM32F1xx_HAL_Driver/Inc -ID:/stm32prj/test02/Drivers/CMSIS/Device/ST/STM32F1xx/Include -ID:/stm32prj/test02/Drivers/CMSIS/Include
+  OBJECT_DIR = CMakeFiles\test02.dir
+  OBJECT_FILE_DIR = CMakeFiles\test02.dir\Kernel\Module\Algorithm\Controller
 
 
 # =============================================================================
@@ -120,11 +129,11 @@ build CMakeFiles/test02.dir/startup_stm32f103xb.s.obj: ASM_COMPILER__test02_unsc
 #############################################
 # Link the executable test02.elf
 
-build test02.elf: C_EXECUTABLE_LINKER__test02_Debug cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f1xx.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj CMakeFiles/test02.dir/Core/Src/main.c.obj CMakeFiles/test02.dir/Core/Src/gpio.c.obj CMakeFiles/test02.dir/Core/Src/stm32f1xx_it.c.obj CMakeFiles/test02.dir/Core/Src/stm32f1xx_hal_msp.c.obj CMakeFiles/test02.dir/Core/Src/sysmem.c.obj CMakeFiles/test02.dir/Core/Src/syscalls.c.obj CMakeFiles/test02.dir/startup_stm32f103xb.s.obj || cmake/stm32cubemx/STM32_Drivers
+build test02.elf: C_EXECUTABLE_LINKER__test02_Debug cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f1xx.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj CMakeFiles/test02.dir/Core/Src/main.c.obj CMakeFiles/test02.dir/Core/Src/gpio.c.obj CMakeFiles/test02.dir/Core/Src/stm32f1xx_it.c.obj CMakeFiles/test02.dir/Core/Src/stm32f1xx_hal_msp.c.obj CMakeFiles/test02.dir/Core/Src/sysmem.c.obj CMakeFiles/test02.dir/Core/Src/syscalls.c.obj CMakeFiles/test02.dir/startup_stm32f103xb.s.obj CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj || cmake/stm32cubemx/STM32_Drivers
   CONFIG = Debug
   FLAGS = -mcpu=cortex-m3  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3
   OBJECT_DIR = CMakeFiles\test02.dir
-  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\stm32prj\test02\build && D:\CMake\bin\cmake.exe -E echo "Building test02" && D:\CMake\bin\cmake.exe -E echo "Generating ELF file: test02.elf" && D:\CMake\bin\cmake.exe -E echo "Generating HEX file: test02.hex" && arm-none-eabi-objcopy.exe -O ihex test02.elf test02.hex && D:\CMake\bin\cmake.exe -E echo "Build complete!" && D:\CMake\bin\cmake.exe -E echo "Flashing test02.hex to the device" && jflash.exe -openprj D:/stm32prj/test02/stm32.jflash -open test02.hex, -6000000 -auto -startapp && D:\CMake\bin\cmake.exe -E echo "Flashing complete!""
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\stm32prj\test02\build && D:\CMake\bin\cmake.exe -E echo "Building test02" && D:\CMake\bin\cmake.exe -E echo "Generating ELF file: test02.elf" && D:\CMake\bin\cmake.exe -E echo "Generating HEX file: test02.hex" && arm-none-eabi-objcopy.exe -O ihex test02.elf test02.hex && D:\CMake\bin\cmake.exe -E echo "Build complete!" && D:\CMake\bin\cmake.exe -E echo "Flashing test02.hex to the device" && jflash.exe -openprj D:/stm32prj/test02/stm32.jflash -open test02.hex, -6000000 -auto -startapp -exit && D:\CMake\bin\cmake.exe -E echo "Flashing complete!""
   PRE_LINK = cd .
   TARGET_FILE = test02.elf
   TARGET_PDB = test02.elf.dbg

@@ -2063,6 +2063,87 @@ Discarded input sections
  .text          0x00000000       0x14 CMakeFiles/test02.dir/startup_stm32f103xb.s.obj
  .data          0x00000000        0x0 CMakeFiles/test02.dir/startup_stm32f103xb.s.obj
  .bss           0x00000000        0x0 CMakeFiles/test02.dir/startup_stm32f103xb.s.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .group         0x00000000        0xc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .text          0x00000000        0x0 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .data          0x00000000        0x0 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_info    0x00000000       0x70 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_abbrev  0x00000000       0x28 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_aranges
+                0x00000000       0x18 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x198 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0xacc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x20f CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x2e CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x8e CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x51 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x103 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x6a CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x1df CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x1c CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0xbd CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0xd23 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000     0xe09e CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x6d CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000     0x34a2 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x190 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x5c CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x5bc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x289 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x1cb CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x114 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x1b2 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x27 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x136 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x1bc CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x34 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x3c CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x57 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x87 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x240 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000      0x140 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_macro   0x00000000       0x83 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_line    0x00000000      0x483 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .debug_str     0x00000000    0x7ad29 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .comment       0x00000000       0x13 CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
+ .ARM.attributes
+                0x00000000       0x2d CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
  .text          0x00000000        0xc D:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(libc_a-errno.o)
  .data          0x00000000        0x0 D:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(libc_a-errno.o)
  .bss           0x00000000        0x0 D:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(libc_a-errno.o)
@@ -2123,6 +2204,7 @@ LOAD CMakeFiles/test02.dir/Core/Src/stm32f1xx_hal_msp.c.obj
 LOAD CMakeFiles/test02.dir/Core/Src/sysmem.c.obj
 LOAD CMakeFiles/test02.dir/Core/Src/syscalls.c.obj
 LOAD CMakeFiles/test02.dir/startup_stm32f103xb.s.obj
+LOAD CMakeFiles/test02.dir/Kernel/Module/Algorithm/Controller/controller.c.obj
 START GROUP
 LOAD D:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp\libgcc.a
 LOAD D:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a
