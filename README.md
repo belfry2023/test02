@@ -76,13 +76,13 @@ code .
 1. 打开下方终端右边有一个选择终端的选项打开powershell然后开始操作
 
 ```powershell
-mkdir build
-cd build
+mkdir build #创建一个文件夹build用来存放编译生成的目标文件
+cd build    #进入该文件夹
 ```
 
 ```powershell
-cmake .. -G 'Ninja'
-ninja -v
+cmake .. -G 'Ninja' #使用Ninja作为编译器
+ninja -v    #编！会生成elf文件
 ```
 
 最后如果终端没报错并且打开build文件夹可以找到 “工程名”.elf 的文件那么就是成功了。
@@ -98,7 +98,7 @@ cmake .. -G 'MinGW Makefiles'
 之后打开bash终端运行下面代码
 
 ```bash
-mingw32-make -j24
+mingw32-make -j24   #这下看懂了
 ```
 
 过程无报错且最后在build文件夹中生成目标elf文件即可
