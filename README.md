@@ -49,7 +49,7 @@
 1. 配置git，如果你已经有了github账号，那么打开git bash，输入：
 
 ```bash
-    git config --global user.name "君の名は"
+    git config --global user.name "君の名は"    #记得改成你自己的用户名和邮箱
     git config --global user.email 君のemail
     git config --global http.sslVerify false #如果发现推送时或者拉取时有问题可以试试这行代码
 ```
@@ -64,7 +64,7 @@
 
 1. 打开stm32cubemx并点击右上角st徽标登陆st账号，登陆后在打开时主页面先找到check for updata，点击检查版本更新情况(可选)，之后点击下面的install package & xxx(这个我忘了叫什么了)，找到stm32f1，stm32f4，stm32h7系列的开发支持包并下载。
     · 这一步可能会有登陆失败，链接不上服务器的情况，如果你使用的是从正点原子或者csdn上找到的古老的安装包，这种情况极有可能是因为你电脑的java环境不对，正确的java环境应该是java8u351(建议)，这里推一篇csdn的文章(https://blog.csdn.net/qq_63922192/article/details/127892120) ，但是我还是建议你直接去官网上下载最新的stm32cubemx来解决这个问题，因为旧版本的cubemx没有把java环境集成到安装包中，但是最新的版本是集成的，如果你想之后再学习一下java，那么我其实不建议你为了cubemx再配置一个电脑的java环境，现在网络流行的java教学我记得是java18u的版本
-2. 点击左边第一个选项创建一个工程，等待他自动弹出问答框，选择本工程需要的mpu，本例程采用的是嵌入式的白月光stm32f103c8t6，选择后进入配置环节，注意配置sys里的debug和rcc，配置好时钟树和文件选项-文件名-工程所在位置-使用CMake开发-然后反正就是各种配置，注意选择CMake开发，就是在之前选择MDK地方换成CMake就可以了，最后点击创建工程
+2. 点击左边第一个选项创建一个工程，等待他自动弹出问答框，选择本工程需要的mcu，本例程采用的是嵌入式的白月光stm32f103c8t6，选择后进入配置环节，注意配置sys里的debug和rcc，配置好时钟树和文件选项-文件名-工程所在位置-使用CMake开发-然后反正就是各种配置，注意选择CMake开发，就是在之前选择MDK地方换成CMake就可以了，最后点击创建工程
 3. 在vscode中打开你刚创建的文件夹，注意打开后一级目录可以看到CMakeLists.txt不然你就是打开了工程文件夹的父级目录，这里建议你先在资源管理器里打开文件夹到可以看见CMakeLists.txt之后直接空白处右键在终端打开然后输入我最会的视觉代码。
 
 ```powershell
