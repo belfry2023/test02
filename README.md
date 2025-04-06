@@ -19,7 +19,7 @@
 3. 安装主要程序，基本上就是无脑一直点就可以，无非是换换盘之类的，除了git可能有些复杂，就不再这里赘述了。
 4. 安装完软件后，首先是打开msys2.exe，输入命令，之后就是enter，enter，y，enter了。
 
-```代码直接copy
+```bash
     pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-arm-none-eabi-toolchain mingw-w64-x86_64-ccache  mingw-w64-x86_64-openocd
 ```
 
@@ -32,7 +32,7 @@
     4. ninja-build.exe所在的目录(不加也可以)
 2. vscode的setting.json文件
 
-```抄到json里就行
+```json
     "terminal.integrated.defaultProfile.windows": "mysys2-mingw64", // 若希望为默认终端可以加入这一句
         "terminal.integrated.profiles.windows": {
         "mysys2-mingw64": {
@@ -48,7 +48,7 @@
 
 1. 配置git，如果你已经有了github账号，那么打开git bash，输入：
 
-```可以同时复制多行，注意输入自己的用户名和邮箱
+```bash
     git config --global user.name "君の名は"
     git config --global user.email 君のemail
     git config --global http.sslVerify false //如果发现推送时或者拉取时有问题可以试试这行代码
@@ -67,7 +67,7 @@
 2. 点击左边第一个选项创建一个工程，等待他自动弹出问答框，选择本工程需要的mpu，本例程采用的是嵌入式的白月光stm32f103c8t6，选择后进入配置环节，注意配置sys里的debug和rcc，配置好时钟树和文件选项-文件名-工程所在位置-使用CMake开发-然后反正就是各种配置，注意选择CMake开发，就是在之前选择MDK地方换成CMake就可以了，最后点击创建工程
 3. 在vscode中打开你刚创建的文件夹，注意打开后一级目录可以看到CMakeLists.txt不然你就是打开了工程文件夹的父级目录，这里建议你先在资源管理器里打开文件夹到可以看见CMakeLists.txt之后直接空白处右键在终端打开然后输入我最会的视觉代码。
 
-```这很棒了
+```powershell
 code .
 ```
 
@@ -75,14 +75,30 @@ code .
 
 1. 打开下方终端右边有一个选择终端的选项打开powershell然后开始操作
 
-```创建一个子文件夹取名为build并进入
+```powershell
 mkdir build
 cd build
 ```
 
-```在该文件夹下编译工程，需要找到上级目录下的CMakeLists.txt作为指引
+```powershell
 cmake .. -G 'Ninja'
 ninja -v
 ```
 
 最后如果终端没报错并且打开build文件夹可以找到 “工程名”.elf 的文件那么就是成功了。
+
+## 编译过程-使用MinGW
+
+打开终端powershell，和Ninja流一样先创建build，之后在build文件夹里用powershell执行以下命令
+
+```powershell
+cmake .. -G 'MinGW Makefiles'
+```
+
+之后打开bash终端运行下面代码
+
+```bash
+mingw32-make -j24
+```
+
+过程无报错且最后在build文件夹中生成目标elf文件即可
