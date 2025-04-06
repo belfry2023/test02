@@ -131,7 +131,7 @@ ADD_CUSTOM_COMMAND(
     TARGET ${CMAKE_PROJECT_NAME}    #指令目标
     POST_BUILD  #在每次编译后
     COMMAND ${OBJCOPY} -O ihex ${ELFFILE} ${HEXFILE}    #执行命令使用OBJCOPY工具将目标elf文件转换成hex文件
-     COMMAND ${JFLASH} -openprj ${CMAKE_SOURCE_DIR}/stm32.jflash -open ${HEXFILE}, -6000000 -auto -startapp -exit
+    COMMAND ${JFLASH} -openprj ${CMAKE_SOURCE_DIR}/stm32.jflash -open ${HEXFILE}, -6000000 -auto -startapp -exit
 )
 ```
 
