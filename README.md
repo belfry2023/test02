@@ -102,3 +102,62 @@ mingw32-make -j24   #这下看懂了
 ```
 
 过程无报错且最后在build文件夹中生成目标elf文件即可
+
+## 下载(download)
+
+想要下载还是有一定难度的，相对于点击即可的MDK下载方式，makefile和cmake开发都需要你写点什么。
+
+### CMake下载
+
+cmake的编译最后并没有生成可以烧录进芯片的hex文件，这部分需要我们自己来做
+
+```CMakeLists
+SET(ELFFILE ${CMAKE_PROJECT_NAME}.elf)  #设置目标elf文件
+SET(HEXFILE ${CMAKE_PROJECT_NAME}.hex)  #设置目标hex文件
+SET(OBJCOPY arm-none-eabi-objcopy.exe)  #设置工具
+ADD_CUSTOM_COMMAND(
+    TARGET ${CMAKE_PROJECT_NAME}    #指令目标
+    POST_BUILD  #在每次编译后
+    COMMAND ${OBJCOPY} -O ihex ${ELFFILE} ${HEXFILE}    #执行命令使用OBJCOPY工具将目标elf文件转换成hex文件
+)
+```
+
+到这一步就可以获得下载用的hex文件了下面这一步其实不配置也没啥——jlink下载命令
+
+```CMakeLists
+SET(JFLASH jflash.exe)
+
+ADD_CUSTOM_COMMAND(
+    TARGET ${CMAKE_PROJECT_NAME}    #指令目标
+    POST_BUILD  #在每次编译后
+    COMMAND ${OBJCOPY} -O ihex ${ELFFILE} ${HEXFILE}    #执行命令使用OBJCOPY工具将目标elf文件转换成hex文件
+     COMMAND ${JFLASH} -openprj ${CMAKE_SOURCE_DIR}/stm32.jflash -open ${HEXFILE}, -6000000 -auto -startapp -exit
+)
+```
+
+到此CMake流创建工程-编译工程-下载烧录一条龙服务齐全了
+
+### MakeFile
+
+makefile相对简单一些不需要你自己配置复杂的编译流程，但是还是需要配置JFLASH下载
+在makefile文件中
+
+```MakeFile
+download_jlink: #为你的下载命令取个名字
+    JFlash -openprj ${CMAKE_SOURCE_DIR}/stm32.jflash -open ${CMAKE_PROJECT_NAME}.hex, -0x6000000 -auto -startapp -exit
+# 这里不多解释这串命令的意思，也没必要特别去了解 ${CMAKE_SOURCE_DIR}就是源文件目录(CMakeLists在的地方) ，stm32.jflash是jflash
+# 下载的工程文件，后面-open打开目标的hex文件，待会就会下载这份文件到芯片上，下到哪？就得看stm32.jflash里的flash项下的baseaddr是
+# 多少了，我这里这份是0x6000000，然后是自动，开始，关闭jflash
+```
+
+之后只用每次想下载的时候就跑到powershell里运行
+
+```powershell
+mingw32-make download_jlink
+```
+
+就可以了
+
+## ozone的无敌调试
+
+功能很多这里先不讲了
