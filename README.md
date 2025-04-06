@@ -51,7 +51,7 @@
 ```bash
     git config --global user.name "君の名は"
     git config --global user.email 君のemail
-    git config --global http.sslVerify false //如果发现推送时或者拉取时有问题可以试试这行代码
+    git config --global http.sslVerify false #如果发现推送时或者拉取时有问题可以试试这行代码
 ```
 
 ## 准备工作的收尾
