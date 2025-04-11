@@ -140,6 +140,7 @@ ADD_CUSTOM_COMMAND(
 ```
 
 到此CMake流创建工程-编译工程-下载烧录一条龙服务齐全了
+另外上次讲到cmake下载烧录有一个很曹丹的地方就是每次下载都得编译一次, 如果没有更改就不编译不烧录
 
 ### MakeFile
 
@@ -148,7 +149,7 @@ makefile相对简单一些不需要你自己配置复杂的编译流程，但是
 
 ```MakeFile
 download_jlink: #为你的下载命令取个名字
-    JFlash -openprj ${CMAKE_SOURCE_DIR}/stm32.jflash -open ${CMAKE_PROJECT_NAME}.hex, -0x6000000 -auto -startapp -exit
+    JFlash -openprj ${CMAKE_SOURCE_DIR}/stm32.jflash -open ${CMAKE_PROJECT_NAME}.hex, 0x6000000 -auto -startapp -exit
 # 这里不多解释这串命令的意思，也没必要特别去了解 ${CMAKE_SOURCE_DIR}就是源文件目录(CMakeLists在的地方) ，stm32.jflash是jflash
 # 下载的工程文件，后面-open打开目标的hex文件，待会就会下载这份文件到芯片上，下到哪？就得看stm32.jflash里的flash项下的baseaddr是
 # 多少了，我这里这份是0x6000000，然后是自动，开始，关闭jflash
@@ -161,6 +162,23 @@ mingw32-make download_jlink
 ```
 
 就可以了
+
+## 关于CMake方案在被第一次拉取过来之后无法直接编译的问题
+
+这边建议删除build, 然后
+
+```powershell
+mkdir build
+cd build
+cmake .. -G 'Ninja'
+ninja -v
+```
+
+就好了, 其次还有CMakeLists的报错比较不明显, 例如:
+
+```powershell
+D:/git_code/test02/Kernel/Module/Algorithm/Controller/controller.c:2: error: expected '=', ',', ';', 'asm' or '__attribute__' at end of input
+```
 
 ## ozone的无敌调试
 
