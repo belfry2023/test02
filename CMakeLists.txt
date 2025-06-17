@@ -72,8 +72,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 # SET(CMAKE_VERBOSE_MAKEFILE ON)
 SET(ELFFILE ${CMAKE_PROJECT_NAME}.elf)
 SET(HEXFILE ${CMAKE_PROJECT_NAME}.hex)
-SET(OBJCOPY arm-none-eabi-objcopy.exe)
-SET(JFLASH jflash.exe)
+SET(OBJCOPY arm-none-eabi-objcopy)
+SET(JFLASH JFlash)
 # Add custom commands to build the project
 ADD_CUSTOM_COMMAND(
     TARGET ${CMAKE_PROJECT_NAME}

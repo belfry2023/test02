@@ -193,4 +193,41 @@ D:/git_code/test02/Kernel/Module/Algorithm/Controller/controller.c:2: error: exp
 前期已经在配置环境的时候把GitHub登陆到了vscode上，现在让我们把刚刚创建的新工程提交到你的GitHub上
 全屏后左侧图标从上往下数第三个是vscode的git拓展，进入该界面，对于新创建的工程文件夹还没有初始化仓库，点击初始化仓库，随后点击更改，发现更改一栏右侧有+号，点击+号，更改进入暂存区，编辑消息，消息内容要求清楚描述这次更改的地方和目的，点击提交，随后提交选项会变成发布到branch，点击后会让你选择新建pubilc还是private的仓库，选择pubilc，发布。
 
-### pull
+## 兼容linux
+
+最近把小电脑配置成了完全的Ubuntu环境，突然想起来好像有同学的电脑是纯Ubuntu系统，在开发stm32芯片时遇到过一些问题，因此研究了一下linux版本下的stm32芯片开发
+
+### 依旧是配置软件
+
+1. 首先要解决网络问题，我们依旧下载steam++(watt) (https://steampp.net/) ，链接放这里了，同时为还是建议大家学习一下科学上网，推荐使用clash-verge (https://clashverge.net/clash-verge/) ，链接放这里，机场自己选，我用的百变小樱的机场，多说无益，下一项吧。
+2. 接下来是安装vscode和stmcubemx，依旧是之前的网址 (https://code.visualstudio.com/Download) ，(https://www.stmcu.com.cn/Designresource/detail/software/711298) ，只不过这次我们选择使用linux版本，下载下来dem或者rpm包后运行，MX安装是图形化界面，解压linux的zip就能看见那个程序，点击运行安装即可。
+
+```bash
+sudo dpkg -i pkgname.deb #此处pkgname替换成目标包名，应该都会
+```
+
+3. 然后安装jlink (https://www.segger.com/downloads/jlink/) ，cmake和ninja，运行如下指令
+
+```bash
+sudo apt update
+sudo apt install cmake
+sudo apt install ninja-build
+```
+在下载好jlink的deb文件的文件夹中打开终端，运行
+
+```bash
+sudo dpkg -i JLink_Linux_V842_x86_64.deb
+```
+
+然后打开vscode，打开配置文件setting.json，添加
+
+```json   
+   "cmake.configureOnOpen": true,
+   "cmake.sourceDirectory": "${workspaceFolder}",
+   "cmake.buildDirectory": "${workspaceFolder}/build",
+   "cmake.generator": "Ninja",
+   "cmake.cmakePath": "/usr/bin/cmake", // 或者你的 CMake 路径
+   "cmake.ninjaPath": "/usr/bin/ninja"   // 或者你的 Ninja 路径
+```
+
+对了，建议在vscode上安装cmake拓展，这样就可以做到一键编译下载了。有了在windows上操作的经验，想必这种事情应该也是轻车熟路了。
