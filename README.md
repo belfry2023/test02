@@ -231,3 +231,7 @@ sudo dpkg -i JLink_Linux_V842_x86_64.deb
 ```
 
 对了，建议在vscode上安装cmake拓展，这样就可以做到一键编译下载了。有了在windows上操作的经验，想必这种事情应该也是轻车熟路了。
+
+## 注意
+
+如果说你按我说的方法没配置好，可以问问deepseek怎么看，致敬传奇代码手deepseek。
