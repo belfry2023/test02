@@ -118,7 +118,7 @@ cmake的编译最后并没有生成可以烧录进芯片的hex文件，这部分
 ```CMakeLists
 SET(ELFFILE ${CMAKE_PROJECT_NAME}.elf)  #设置目标elf文件
 SET(HEXFILE ${CMAKE_PROJECT_NAME}.hex)  #设置目标hex文件
-SET(OBJCOPY arm-none-eabi-objcopy.exe)  #设置工具
+SET(OBJCOPY arm-none-eabi-objcopy)  #设置工具
 ADD_CUSTOM_COMMAND(
     TARGET ${CMAKE_PROJECT_NAME}    #指令目标
     POST_BUILD  #在每次编译后
@@ -129,7 +129,7 @@ ADD_CUSTOM_COMMAND(
 到这一步就可以获得下载用的hex文件了下面这一步其实不配置也没啥——jlink下载命令
 
 ```CMakeLists
-SET(JFLASH jflash.exe)
+SET(JFLASH JFlash)
 
 ADD_CUSTOM_COMMAND(
     TARGET ${CMAKE_PROJECT_NAME}    #指令目标
@@ -234,4 +234,4 @@ sudo dpkg -i JLink_Linux_V842_x86_64.deb
 
 ## 注意
 
-如果说你按我说的方法没配置好，可以问问deepseek怎么看，致敬传奇代码手deepseek。为还让deepseek根据这篇markdown写了一篇说明文档，但是感觉写的不是很好，虽然他确实很会写md罢了。
+如果说你按我说的方法没配置好，可以问问deepseek怎么看，致敬传奇代码手deepseek。为还让deepseek根据这篇markdown写了一篇说明文档，但是感觉写的不是很好，虽然他确实很会写md罢了。还有就是虽然我写了怎么自己改CMakeLists.txt但是为还是建议直接复制我这个工程下CMakeLists.txt中对应的部分，在你理解了配置的方法之后，实际上就算我的CMakeLists.txt移植过程有问题也可以自己解决。
