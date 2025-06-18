@@ -81,7 +81,7 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/belfry/gitcode/test02/Kernel/Module/Algorithm/Controller/controller.h"
+					"path" : "/home/belfry/gitcode/test02/Kernel/Module/Algorithm/Controller"
 				},
 				{
 					"backtrace" : 2,
@@ -150,7 +150,7 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/belfry/gitcode/test02/Kernel/Module/Algorithm/Controller/controller.h"
+					"path" : "/home/belfry/gitcode/test02/Kernel/Module/Algorithm/Controller"
 				},
 				{
 					"backtrace" : 2,
