@@ -234,4 +234,4 @@ sudo dpkg -i JLink_Linux_V842_x86_64.deb
 
 ## 注意
 
-如果说你按我说的方法没配置好，可以问问deepseek怎么看，致敬传奇代码手deepseek。
+如果说你按我说的方法没配置好，可以问问deepseek怎么看，致敬传奇代码手deepseek。为还让deepseek根据这篇markdown写了一篇说明文档，但是感觉写的不是很好，虽然他确实很会写md罢了。
