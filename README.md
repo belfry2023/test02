@@ -235,3 +235,24 @@ sudo dpkg -i JLink_Linux_V842_x86_64.deb
 ## 注意
 
 如果说你按我说的方法没配置好，可以问问deepseek怎么看，致敬传奇代码手deepseek。为还让deepseek根据这篇markdown写了一篇说明文档，但是感觉写的不是很好，虽然他确实很会写md罢了。还有就是虽然我写了怎么自己改CMakeLists.txt但是为还是建议直接复制我这个工程下CMakeLists.txt中对应的部分，在你理解了配置的方法之后，实际上就算我的CMakeLists.txt移植过程有问题也可以自己解决。
+破案了，我的大电脑(WIN)原先的GCC11版本被顶了，刚才编译的时候使用的是更古老的链接器，在STM#@F!)#XX_FLASH.ld文件的105行开始，是一段无关紧要的配置，但是只支持GCC11版本往上的，例如：
+
+```ld
+  .init_array (READONLY) : /* The "READONLY" keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
+  {
+    . = ALIGN(4);
+    PROVIDE_HIDDEN (__init_array_start = .);
+    KEEP (*(SORT(.init_array.*)))
+    KEEP (*(.init_array*))
+    PROVIDE_HIDDEN (__init_array_end = .);
+    . = ALIGN(4);
+  } >FLASH
+```
+
+仔细看第一行的注释
+
+```ld
+  .init_array (READONLY) : /* The "READONLY" keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
+```
+
+真相了，删除掉READONLY后，大电脑正常编译下载了，只用删除READONLY，不过我尝试了把带有该类标记的内容全部删除，也没问题（暂时）。
