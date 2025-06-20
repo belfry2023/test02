@@ -5,7 +5,7 @@
 **********************************************************************
 
 File          : /home/belfry/gitcode/test02/debug/test02.jdebug
-Created       : 20 Jun 2025 11:09
+Created       : 20 Jun 2025 11:31
 Ozone Version : V3.38g
 */
 void OnProjectLoad (void) {
@@ -13,12 +13,12 @@ void OnProjectLoad (void) {
   Project.AddPathSubstitute("/home/belfry/gitcode/test02", "$(ProjectDir)");
   
   // 设备配置
-  Project.SetDevice("STM32F407VE");
+  Project.SetDevice("STM32F103C8");
   Project.SetHostIF("USB", "");
   Project.SetTargetIF("SWD");
   Project.SetTIFSpeed("4 MHz");
-  Project.AddSvdFile("$(InstallDir)/Config/CPU/Cortex-M4.svd");
-  Project.AddSvdFile("$(InstallDir)/Config/Peripherals/STM32F4xx.svd");
+  Project.AddSvdFile("$(InstallDir)/Config/CPU/Cortex-M3.svd");
+  Project.AddSvdFile("$(InstallDir)/Config/Peripherals/STM32F1xx.svd");
   
   // 加载ELF
   File.Open("/home/belfry/gitcode/test02/build/test02.elf");

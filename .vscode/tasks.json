@@ -64,7 +64,7 @@
                 "${workspaceFolder}/.vscode/generate_jdebug.py",
                 "${workspaceFolderBasename}",
                 "${workspaceFolder}/build/${workspaceFolderBasename}.elf",
-                "STM32F407VE"  // 修改为你的芯片型号
+                "STM32F103C8"  // 修改为你的芯片型号
             ],
             "problemMatcher": [],
             "dependsOn": ["CMake: Build Project"]

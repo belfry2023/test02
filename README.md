@@ -257,3 +257,178 @@ sudo dpkg -i JLink_Linux_V842_x86_64.deb
 ```
 
 真相了，删除掉READONLY后，大电脑正常编译下载了，只用删除READONLY，不过我尝试了把带有该类标记的内容全部删除，也没问题（暂时）。
+
+## 2025.6.20
+
+更新了一键烧录和一键ozone的功能，都用vscode了，怎么也得玩玩json了
+
+### launch.json
+
+这部分是我下载的cortex-degub插件自动生成的，实用性欠佳，可以不用管。
+
+```json
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceFolder}",
+            "executable": "./bin/executable.elf",
+            "name": "Debug with JLink",
+            "request": "launch",
+            "type": "cortex-debug",
+            "device": "",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none",
+            "servertype": "jlink"
+        },
+        {
+            "cwd": "${workspaceFolder}",
+            "executable": "./bin/executable.elf",
+            "name": "Debug with JLink",
+            "request": "launch",
+            "type": "cortex-debug",
+            "device": "",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none",
+            "servertype": "jlink"
+        },
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "./bin/executable.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "jlink"
+        }
+    ]
+}
+```
+
+### tasks.json
+
+这部分内容比较重量级，也是比较重要的，json的格式其实很简单，咱们搞嵌入式的会用就行了，
+
+```json
+{
+    "version": "2.0.0", //版本
+    "tasks": [          //任务
+        {
+            "label": "CMake: Build Project",//标签（任务名，启动时喊出任务名）
+            "type": "shell",                //属于的脚本类型
+            "command": "cmake",             //命令（实际上执行的程序）
+            "args": [                       //命令的参数
+                "-S", "${workspaceFolder}", //前边是命令后跟的进一步操作，后边是操作的对象
+                "-B", "${workspaceFolder}/build",
+                "-G", "Ninja"
+            ],
+            "group": "build",               //类别
+            "problemMatcher": [],           //无所谓的东西
+            "detail": "Configure CMake project"//运行提示
+        },//每个任务用“{}”括住，任务之间有“,”隔开。
+        {
+            "label": "CMake: Generate HEX",
+            "type": "shell",
+            "command": "ninja",
+            "args": [
+                "-C", "${workspaceFolder}/build"
+            ],
+            "group": "build",
+            "dependsOn": ["CMake: Build Project"],
+            "problemMatcher": [],
+            "detail": "Build project and generate HEX file"
+        },
+        {
+            "label": "JFlash: Program Device",
+            "type": "shell",
+            "command": "JFlash",
+            "args": [
+                "-openprj", "${workspaceFolder}/stm32.jflash",
+                "-open", "${workspaceFolder}/build/${input:hexFileName}",
+                "-auto",
+                "-startapp",
+                "-exit"
+            ],
+            "dependsOn": ["CMake: Generate HEX"],
+            "problemMatcher": [],
+            "detail": "Program HEX file to target via J-Flash"
+        },
+        {
+            "label": "Full Build & Flash",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "CMake: Build Project",
+                "CMake: Generate HEX",
+                "JFlash: Program Device"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Complete build and flash workflow"
+        },
+        {
+            "label": "Generate Ozone Project",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${workspaceFolder}/.vscode/generate_jdebug.py",
+                "${workspaceFolderBasename}",
+                "${workspaceFolder}/build/${workspaceFolderBasename}.elf",
+                "STM32F103C8"  // 修改为你的芯片型号
+            ],
+            "problemMatcher": [],
+            "dependsOn": ["CMake: Build Project"]
+        },
+        {
+            "label": "Start Ozone Debug",
+            "type": "process",
+            "command": "/usr/bin/ozone",
+            "args": [
+                "${workspaceFolder}/debug/${workspaceFolderBasename}.jdebug"
+            ],
+            "problemMatcher": [],
+            "dependsOn": ["Generate Ozone Project"],
+            "presentation": {
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Full Build & Debug",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "CMake: Configure",
+                "CMake: Build Project",
+                "Generate Ozone Project",
+                "Start Ozone Debug"
+            ],
+            "group": "test"
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/build/*",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "hexFileName",
+            "type": "promptString",
+            "description": "Enter the HEX filename (e.g. project.hex)",
+            "default": "${workspaceFolderBasename}.hex"
+        }
+    ]
+}
+```
+
+### generate_jdebug.py
+
+一个生成仿照ozone生成的jdebug文件的脚本，好使，直接抄。

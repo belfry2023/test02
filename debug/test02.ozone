@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<Ozone><Project><TargetDevice>STM32F407VE</TargetDevice><TargetInterface>SWD</TargetInterface><TargetSpeed>4000</TargetSpeed></Project><Debug><Executable>/home/belfry/gitcode/test02/build/test02.elf</Executable><RunAfterDownload>ResetAndRun</RunAfterDownload></Debug></Ozone>
