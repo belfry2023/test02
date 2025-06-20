@@ -55,6 +55,52 @@
                 "isDefault": true
             },
             "detail": "Complete build and flash workflow"
+        },
+        {
+            "label": "Generate Ozone Project",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${workspaceFolder}/.vscode/generate_jdebug.py",
+                "${workspaceFolderBasename}",
+                "${workspaceFolder}/build/${workspaceFolderBasename}.elf",
+                "STM32F407VE"  // 修改为你的芯片型号
+            ],
+            "problemMatcher": [],
+            "dependsOn": ["CMake: Build Project"]
+        },
+        {
+            "label": "Start Ozone Debug",
+            "type": "process",
+            "command": "/usr/bin/ozone",
+            "args": [
+                "${workspaceFolder}/debug/${workspaceFolderBasename}.jdebug"
+            ],
+            "problemMatcher": [],
+            "dependsOn": ["Generate Ozone Project"],
+            "presentation": {
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Full Build & Debug",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "CMake: Configure",
+                "CMake: Build Project",
+                "Generate Ozone Project",
+                "Start Ozone Debug"
+            ],
+            "group": "test"
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/build/*",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
         }
     ],
     "inputs": [

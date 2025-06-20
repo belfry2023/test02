@@ -1,0 +1,46 @@
+/*********************************************************************
+*                 (c) SEGGER Microcontroller GmbH                    *
+*                      The Embedded Experts                          *
+*                         www.segger.com                             *
+**********************************************************************
+
+File          : /home/belfry/gitcode/test02/debug/test02.jdebug
+Created       : 20 Jun 2025 11:09
+Ozone Version : V3.38g
+*/
+void OnProjectLoad (void) {
+  // 路径替换
+  Project.AddPathSubstitute("/home/belfry/gitcode/test02", "$(ProjectDir)");
+  
+  // 设备配置
+  Project.SetDevice("STM32F407VE");
+  Project.SetHostIF("USB", "");
+  Project.SetTargetIF("SWD");
+  Project.SetTIFSpeed("4 MHz");
+  Project.AddSvdFile("$(InstallDir)/Config/CPU/Cortex-M4.svd");
+  Project.AddSvdFile("$(InstallDir)/Config/Peripherals/STM32F4xx.svd");
+  
+  // 加载ELF
+  File.Open("/home/belfry/gitcode/test02/build/test02.elf");
+}
+
+// 标准事件处理
+void AfterTargetReset (void) {
+  _SetupTarget();
+}
+
+void AfterTargetDownload (void) {
+  _SetupTarget();
+}
+
+void _SetupTarget(void) {
+  unsigned int SP, PC, VectorTableAddr = Elf.GetBaseAddr();
+  
+  if (VectorTableAddr != 0xFFFFFFFF) {
+    SP = Target.ReadU32(VectorTableAddr);
+    Target.SetReg("SP", (SP != 0xFFFFFFFF) ? SP : 0x20000000);
+    
+    PC = Elf.GetEntryPointPC();
+    Target.SetReg("PC", (PC != 0xFFFFFFFF) ? PC : VectorTableAddr + 4);
+  }
+}
