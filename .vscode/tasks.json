@@ -1,0 +1,68 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: Build Project",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", "${workspaceFolder}",
+                "-B", "${workspaceFolder}/build",
+                "-G", "Ninja"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Configure CMake project"
+        },
+        {
+            "label": "CMake: Generate HEX",
+            "type": "shell",
+            "command": "ninja",
+            "args": [
+                "-C", "${workspaceFolder}/build"
+            ],
+            "group": "build",
+            "dependsOn": ["CMake: Build Project"],
+            "problemMatcher": [],
+            "detail": "Build project and generate HEX file"
+        },
+        {
+            "label": "JFlash: Program Device",
+            "type": "shell",
+            "command": "JFlash",
+            "args": [
+                "-openprj", "${workspaceFolder}/stm32.jflash",
+                "-open", "${workspaceFolder}/build/${input:hexFileName}",
+                "-auto",
+                "-startapp",
+                "-exit"
+            ],
+            "dependsOn": ["CMake: Generate HEX"],
+            "problemMatcher": [],
+            "detail": "Program HEX file to target via J-Flash"
+        },
+        {
+            "label": "Full Build & Flash",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "CMake: Build Project",
+                "CMake: Generate HEX",
+                "JFlash: Program Device"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Complete build and flash workflow"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "hexFileName",
+            "type": "promptString",
+            "description": "Enter the HEX filename (e.g. project.hex)",
+            "default": "${workspaceFolderBasename}.hex"
+        }
+    ]
+}
